@@ -386,11 +386,6 @@ I,J,N = findnz(z)
 v  = OffsetArray([1,1e100,1,-1e100], (-3,))*1000
 v2 = OffsetArray([1,-1e100,1,1e100], (5,))*1000
 @test isa(v, OffsetArray)
-cv  = OffsetArray([1,1e100,1e100,2], (-3,))*1000
-cv2 = OffsetArray([1,-1e100,-1e100,2], (5,))*1000
-@test isequal(cumsum_kbn(v), cv)
-@test isequal(cumsum_kbn(v2), cv2)
-@test isequal(sum_kbn(v), sum_kbn(parent(v)))
 
 io = IOBuffer()
 writedlm(io, A)
